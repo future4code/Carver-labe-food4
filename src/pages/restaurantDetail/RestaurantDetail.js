@@ -1,5 +1,5 @@
 import React from "react"
-import { getRestaurants } from "../../api/APIRequests"
+import { getRestaurants } from "../../api/API_Requests"
 
 const RestaurantDetail = () => {
     const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IktwU3FHbVJBQWxLd3kzNnRTaXJ2IiwibmFtZSI6IlRlc3RlIiwiZW1haWwiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJjcGYiOiIxMjMuMTIzLjEyMy01NCIsImhhc0FkZHJlc3MiOmZhbHNlLCJpYXQiOjE2NDE4NDA5MjB9.1mchq6qTp4inUiaYvEi4Kfx-XNFuoPa7Nb6GnQRYR78"
