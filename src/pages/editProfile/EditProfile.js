@@ -4,7 +4,7 @@ import axios from "axios"
 import {InputsContainer} from './StyledEditProfile'
 
 const EditProfile = () => {
-    const {form, onChange, clear} = useForm({name:'', email: '', cpf: ''})
+    const {form, onChange, clearInputs} = useForm({name:'', email: '', cpf: ''})
 
     const onSubmitForm = (event) => {
         event.preventDefault()
@@ -28,20 +28,21 @@ const EditProfile = () => {
         .catch((err) => {
             console.log(err.response)
         })
+        clearInputs()
     }
 
     return (
         <div>
             <h1>Atualize seu Cadastro</h1>
-            <form>
+            <form onSubmit={onSubmitForm} >
                 <InputsContainer>
-                <input onSubmit={onSubmitForm} 
+                <input
                     required 
                     value={form.name} 
                     name={'name'} 
                     onChange={onChange} 
                     placeholder='Nome e sobrenome'
-                     margin={'normal'}
+                    margin={'normal'}
                     
                 />
                 <input

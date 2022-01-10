@@ -24,11 +24,11 @@ const EditAddress = () => {
         axios.put(url, form, headers)
         .then((res) => {
             console.log(res)
-            clearInputs()
         })
         .catch((err) => {
             console.log(err.response)
         })
+        clearInputs()
     }
 
     return (
