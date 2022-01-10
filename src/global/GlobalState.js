@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import GlobalStateConstext from "./GlobalStateContext";
+import React from "react";
 
 export const GlobalState = (props) => {
     const [data, set_data] = useState([])
