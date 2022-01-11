@@ -24,6 +24,7 @@ const EditAddress = () => {
         axios.put(url, form, headers)
         .then((res) => {
             console.log(res)
+            alert("Dados atualizados com sucesso")
         })
         .catch((err) => {
             console.log(err.response)
