@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { ApiLogin } from '../../api/API_Account';
 import { goToHome } from '../../routes/Coordinator';
 
 const CartPage = () => {
@@ -7,6 +8,11 @@ const CartPage = () => {
 
   const clickSubmit = () => {
     goToHome(history);
+  };
+
+  const login = () => {
+    const body = { email: 'teste@email.com', password: '123456' };
+    ApiLogin(body);
   };
 
   return (
@@ -48,6 +54,8 @@ const CartPage = () => {
         <label>Dinheiro</label>
         <button>Pagar</button>
       </form>
+
+      <button onClick={login}>Login</button>
     </div>
   );
 };
