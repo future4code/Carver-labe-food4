@@ -1,16 +1,23 @@
-import React from "react"
-import { getRestaurants } from "../../api/API_Requests"
+import React, { useEffect, useState } from "react"
+import { useHistory, useParams } from "react-router-dom"
+import { getRestaurantDetails, getRestaurants } from "../../api/API_Requests"
 
 const RestaurantDetail = () => {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IktwU3FHbVJBQWxLd3kzNnRTaXJ2IiwibmFtZSI6IlRlc3RlIiwiZW1haWwiOiJ0ZXN0ZUBlbWFpbC5jb20iLCJjcGYiOiIxMjMuMTIzLjEyMy01NCIsImhhc0FkZHJlc3MiOmZhbHNlLCJpYXQiOjE2NDE4NDA5MjB9.1mchq6qTp4inUiaYvEi4Kfx-XNFuoPa7Nb6GnQRYR78"
+    const [restaurantDetail, set_restaurantsDetails] = useState()
 
+    const history = useHistory()
+    const params = useParams()
+
+    useEffect(() => {
+        getRestaurantDetails(params.id, set_restaurantsDetails)
+    },[])
 
 
 
     return (
         <div>
+            <button onClick={() => console.log(params.id)}>INFO</button>
             <img src="https://www.baressp.com.br/bares/fotos3/mc_donalds_5-min_090420191434.jpg" alt="logo" />
-            <button onClick={() => getRestaurants (token)}>INFO</button>
             <p> Mock_nome </p>
             <p> Mock_tipo </p>
             <p><spam> Mock_TempoDeEspera</spam> <spam>Mock_preçoFrete</spam></p>

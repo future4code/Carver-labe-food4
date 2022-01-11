@@ -1,20 +1,21 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { BrowserRouter, Route, Switch, useRouteMatch } from "react-router-dom"
 import LoginPage from '../pages/loginPage/LoginPage'
 import SignupPage from "../pages/signupPage/SignupPage"
 import HomePage from "../pages/homePage/HomePage"
 import CartPage from "../pages/cartPage/CartPage"
 import Profile from "../pages/profile/Profile"
-import RegisterAddress from "../pages/registerAddress/RegisterAddress"
+import Error from "../pages/error/Error"
 import EditAddress from "../pages/editAddress/EditAddress"
 import EditProfile from "../pages/editProfile/EditProfile"
 import RestaurantDetail from "../pages/restaurantDetail/RestaurantDetail"
 import React from "react"
+import CompAndaAnda from "../components/localizador"
 
 const Router = () => {
     return (
         <BrowserRouter>
+            <CompAndaAnda />
             <Switch>
-
                 <Route exact path = {'/login'}>
                     <LoginPage/>
                 </Route>
@@ -35,10 +36,6 @@ const Router = () => {
                     <Profile/>
                 </Route>
 
-                <Route exact path = {'/registeraddress'}>
-                    <RegisterAddress/>
-                </Route>
-
                 <Route exact path = {'/editAddress'}>
                     <EditAddress/>
                 </Route>
@@ -47,10 +44,13 @@ const Router = () => {
                     <EditProfile/>
                 </Route>
 
-                <Route exact path = {'/restaurant/:id'}>
+                <Route exact path = {'/restaurants/:id'}>
                     <RestaurantDetail/>
                 </Route>
 
+                <Route>
+                    <Error/>
+                </Route>
             </Switch>
         </BrowserRouter>
     )
