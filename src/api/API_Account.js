@@ -22,6 +22,8 @@ export const ApiLogin = (body) => {
             .then((resp) => {
                 localStorage.setItem("token", resp.data.token)
                 window.alert("cadastrado com sucesso")
+                history.push("/registeraddress")
+                
             })
             .catch((error) => {
                 window.alert(error.response.message)
