@@ -21,22 +21,15 @@ export const getRestaurantDetails = (id, set_data) => {
     const url = `${URL_BASE}/restaurants/${id}`
     const token = localStorage.getItem('token')
     const header = { headers: { auth: token } }
-    let array = []
-    let restaurant = []
-    let products = []
+    const array = []
 
 
     axios.get(url, header)
         .then((resp) => {
             console.log("getRestaurantDetails ok", resp.data)
             array.push(resp.data.restaurant)
-            restaurant.push(resp.data.restaurant)
-            products.push(resp.data.restaurant.products)
-            // array.push(resp.data.restaurant.products)
-            set_data(products)
+            set_data(array)
             console.log("array:", array)
-            console.log("pruducts:", products)
-            console.log("restaurant:", restaurant)
         })
         .catch((error) =>{
             // window.alert("getRestaurantDetails erro")
