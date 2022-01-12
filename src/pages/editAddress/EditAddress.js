@@ -1,38 +1,21 @@
 import React from "react"
 import {InputsContainer} from './StyledEditAddress'
 import { useForm } from "../../hooks/useForm"
-import axios from 'axios'
 import { ApiAddAdress } from "../../api/API_Account"
+import { useHistory } from "react-router-dom"
 
 const EditAddress = () => {
+    const history = useHistory()
 
     const {form, onChange, clearInputs} = useForm({street:'', number: '', complement: '', neighbourhood:'', city: '', state: ''})
 
     const onSubmitAddress = (event) => {
         event.preventDefault()
         console.log(form)
-        ApiAddAdress(form)
+        ApiAddAdress(form, history)
         clearInputs()
     }
 
-    // const requestAddress = () => {
-    //     const url = "https://us-central1-missao-newton.cloudfunctions.net/rappi4B/address"
-    //     const headers = {
-    //         headers:{
-    //             contentType: 'application/json',
-    //             auth: localStorage.getItem('token')
-    //         }
-    //     }
-    //     axios.put(url, form, headers)
-    //     .then((res) => {
-    //         console.log(res)
-    //         alert("Dados atualizados com sucesso")
-    //     })
-    //     .catch((err) => {
-    //         console.log(err.response)
-    //     })
-    //     clearInputs()
-    // }
 
     return (
         <div>
