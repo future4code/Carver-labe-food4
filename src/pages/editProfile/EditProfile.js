@@ -2,8 +2,11 @@ import React from "react"
 import {useForm} from '../../hooks/useForm'
 import axios from "axios"
 import {InputsContainer} from './StyledEditProfile'
+import { goToHome } from "../../routes/Coordinator"
+import { useHistory } from "react-router-dom"
 
 const EditProfile = () => {
+    const history = useHistory()
     const {form, onChange, clearInputs} = useForm({name:'', email: '', cpf: ''})
 
     const onSubmitForm = (event) => {
@@ -24,6 +27,8 @@ const EditProfile = () => {
         axios.put(url, form, headers)
         .then((res) => {
             console.log(res)
+            alert('Cadastro atualizado!')
+            goToHome(history)
         })
         .catch((err) => {
             console.log(err.response)

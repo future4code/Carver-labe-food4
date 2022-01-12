@@ -1,8 +1,12 @@
 import axios from "axios";
 import URL_BASE from "../constants/URL_BASE";
 
+
+
+
 export const ApiLogin = (body, history) => {
     const url = `${URL_BASE}/login`
+    
 
     axios.post(url, body)
         .then((resp) => {
@@ -41,6 +45,7 @@ export const ApiLogin = (body, history) => {
             .then((resp) => {
                 localStorage.setItem("token", resp.data.token)
                 window.alert("endereço cadastrado com sucesso")  
+                console.log(resp)
                 history.push("/")
             })
             .catch((error) => {
