@@ -12,17 +12,29 @@ const RestaurantDetail = () => {
         getRestaurantDetails(params.id, set_restaurantDetails)
     },[])
 
+    const details = restaurantDetails && restaurantDetails.map((item) => {
+        return <p>{item.name}</p>
+    })
+
+    const products = restaurantDetails && restaurantDetails.map((item) => {
+        return <h6>{item && item.products.map((i, index)=> {
+            return index <= 2 && <p>{i.name}</p>
+        })}</h6>
+    })
+
 
 
     return (
         <div>
             <button onClick={() => console.log(restaurantDetails)}>INFO</button>
             
-            {restaurantDetails && restaurantDetails.map((item) => {
+            {details}
+            {products}
+            {/* {restaurantDetails && restaurantDetails.map((item) => {
                 return <p>{item.name}</p>
             })}
 
-            {/* <p>{restaurant.name}</p> */}
+            <p>{restaurant.name}</p> */}
 
         </div>
     )
