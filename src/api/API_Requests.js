@@ -17,18 +17,26 @@ export const getRestaurants = (set_data) => {
 }
 
 export const getRestaurantDetails = (id, set_data) => {
-    console.log("params", id)
+    // console.log("params", id)
     const url = `${URL_BASE}/restaurants/${id}`
     const token = localStorage.getItem('token')
     const header = { headers: { auth: token } }
+    let array = []
+    let restaurant = []
+    let products = []
 
-    console.log("API Url:", url)
-    console.log("API header:", header)
 
     axios.get(url, header)
         .then((resp) => {
-            console.log("getRestaurantDetails", resp.data)
-            set_data(resp.data)
+            console.log("getRestaurantDetails ok", resp.data)
+            array.push(resp.data.restaurant)
+            restaurant.push(resp.data.restaurant)
+            products.push(resp.data.restaurant.products)
+            // array.push(resp.data.restaurant.products)
+            set_data(products)
+            console.log("array:", array)
+            console.log("pruducts:", products)
+            console.log("restaurant:", restaurant)
         })
         .catch((error) =>{
             // window.alert("getRestaurantDetails erro")

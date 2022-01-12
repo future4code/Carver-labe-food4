@@ -3,27 +3,26 @@ import { useHistory, useParams } from "react-router-dom"
 import { getRestaurantDetails, getRestaurants } from "../../api/API_Requests"
 
 const RestaurantDetail = () => {
-    const [restaurantDetail, set_restaurantsDetails] = useState()
+    const [restaurantDetails, set_restaurantDetails] = useState([])
 
     const history = useHistory()
     const params = useParams()
 
     useEffect(() => {
-        getRestaurantDetails(params.id, set_restaurantsDetails)
+        getRestaurantDetails(params.id, set_restaurantDetails)
     },[])
 
 
 
     return (
         <div>
-            <button onClick={() => console.log(params.id)}>INFO</button>
-            <img src="https://www.baressp.com.br/bares/fotos3/mc_donalds_5-min_090420191434.jpg" alt="logo" />
-            <p> Mock_nome </p>
-            <p> Mock_tipo </p>
-            <p><spam> Mock_TempoDeEspera</spam> <spam>Mock_preçoFrete</spam></p>
-            <p>Mock_Rua das Lágrimas </p>
+            <button onClick={() => console.log(restaurantDetails)}>INFO</button>
+            
+            {restaurantDetails && restaurantDetails.map((item) => {
+                return <p>{item.name}</p>
+            })}
 
-            <h4>Principais</h4>
+            {/* <p>{restaurant.name}</p> */}
 
         </div>
     )
