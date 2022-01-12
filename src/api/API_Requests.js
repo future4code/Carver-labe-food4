@@ -44,19 +44,24 @@ export const getRestaurantDetails = (id, set_data) => {
         })
 }
 
-export const getProfile = () => {
+export const getProfile = (set_data) => {
     const url = `${URL_BASE}/profile`
     const token = localStorage.getItem('token')
     const header = { headers: { auth: token } }
+    const array = []
 
     axios.get(url, header)
         .then((resp) => {
             console.log("getRestaurantDetails", resp.data)
+            array.push(resp.data)
+            set_data(array)
         })
         .catch((error) => {
             window.alert("getRestaurantDetails erro")
         })
 }
+
+
 
 export const getFullAdress = () => {
     const url = `${URL_BASE}/profile/address`
