@@ -26,7 +26,8 @@ export const ApiLogin = (body, history) => {
                 history.push("/editAddress")
             })
             .catch((error) => {
-                window.alert(error.response.message)
+                // window.alert(error.response)
+                console.log(error.response)
             })
     }
 
@@ -44,7 +45,7 @@ export const ApiLogin = (body, history) => {
             })
             .catch((error) => {
                 // window.alert(error.response.message)
-                console.log(error)
+                console.log(error.response)
             })
     }
 
