@@ -1,8 +1,11 @@
 import React from "react"
 import axios from "axios"
 import { useForm } from "../../hooks/useForm"
+import { useHistory } from "react-router-dom"
+import { goToSignup } from "../../routes/Coordinator"
 
 const LoginPage = () => {
+    const history = useHistory()
 
     const {form, onChange, clearInputs} = useForm({email: '', password: ''})
 
@@ -57,6 +60,8 @@ const LoginPage = () => {
                     Entrar
                     </button>
                 </form>
+
+                <button onClick={() => goToSignup(history)}> Não tem conta? cadastre-se </button>
         </div>
     )
 }

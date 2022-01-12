@@ -18,10 +18,6 @@ export const goToProfile = (history) => {
     history.push('/profile')
 }
 
-export const goToRegisterAddress = (history) => {
-    history.push('/registeraddress')
-}
-
 export const goToEditProfile = (history) => {
     history.push(`/editProfile`)
 }
@@ -31,5 +27,5 @@ export const goToEditAddress = (history) => {
 }
 
 export const goToDetail = (history, id) => {
-    history.push(`/restaurant/${id}`)
+    history.push(`/restaurants/${id}`)
 }

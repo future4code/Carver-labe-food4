@@ -1,13 +1,14 @@
 import axios from "axios";
 import URL_BASE from "../constants/URL_BASE";
 
-export const ApiLogin = (body) => {
+export const ApiLogin = (body, history) => {
     const url = `${URL_BASE}/login`
 
     axios.post(url, body)
         .then((resp) => {
             localStorage.setItem("token", resp.data.token)
             window.alert("logado com sucesso")
+            history.push("/")
         })
         .catch((error) => {
             window.alert(error.reponse.message)
@@ -22,8 +23,7 @@ export const ApiLogin = (body) => {
             .then((resp) => {
                 localStorage.setItem("token", resp.data.token)
                 window.alert("cadastrado com sucesso")
-                history.push("/registeraddress")
-                
+                history.push("/editAddress")
             })
             .catch((error) => {
                 window.alert(error.response.message)
@@ -31,16 +31,20 @@ export const ApiLogin = (body) => {
     }
 
 
-    export const ApiAddAdress = (body) => {
+    export const ApiAddAdress = (body, history) => {
         const url = `${URL_BASE}/address`
+        const token = localStorage.getItem('token')
+        const header = { headers: { auth: token } }
 
-        axios.post(url, body)
+        axios.put(url, body, header)
             .then((resp) => {
                 localStorage.setItem("token", resp.data.token)
                 window.alert("endereço cadastrado com sucesso")  
+                history.push("/")
             })
             .catch((error) => {
-                window.alert(error.response.message)
+                // window.alert(error.response.message)
+                console.log(error)
             })
     }
 
