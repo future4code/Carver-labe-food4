@@ -18,9 +18,12 @@ export const getRestaurants = (set_data) => {
 
 export const getRestaurantDetails = (id, set_data) => {
     console.log("params", id)
-    const url = `${URL_BASE}/restaurants/${id}}`
+    const url = `${URL_BASE}/restaurants/${id}`
     const token = localStorage.getItem('token')
     const header = { headers: { auth: token } }
+
+    console.log("API Url:", url)
+    console.log("API header:", header)
 
     axios.get(url, header)
         .then((resp) => {
@@ -28,7 +31,8 @@ export const getRestaurantDetails = (id, set_data) => {
             set_data(resp.data)
         })
         .catch((error) =>{
-            window.alert("getRestaurantDetails erro")
+            // window.alert("getRestaurantDetails erro")
+            console.log("getRestaurantDetails erro", error.response)
         })
 }
 
