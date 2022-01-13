@@ -25,7 +25,8 @@ export const GlobalState = (props) => {
         const addCart = [...cart, item];
         set_cart(addCart);
         console.log(addCart);
-        restaurantsDetails.splice(1);}
+        restaurantsDetails.splice(1);
+        localStorage.setItem('carrinho', JSON.stringify(addCart))}
 
     const states = { data, fullAdress, profile, restaurants, restaurantsDetails, activeOrders, historyOrders, cart }
     const setters = { set_data, set_fullAdress, set_profile, set_restaurants, set_restaurantsDetails, set_activeOrders, set_historyOrders, set_cart }

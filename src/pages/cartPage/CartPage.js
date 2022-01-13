@@ -7,11 +7,16 @@ import { goToHome } from '../../routes/Coordinator';
 
 const CartPage = () => {
   const history = useHistory();
-  const {states, setters} = useContext(GlobalStateConstext)
-  const array = []
+  const {states, setters, addToCart} = useContext(GlobalStateConstext)
+  const cartStorage = localStorage.getItem('carrinho')
+  const newList = JSON.parse(cartStorage)
 
   useEffect(() => {
-  setters.set_cart(array)
+  if(!localStorage.getItem('carrinho')){
+    return addToCart()
+  }else{
+    return setters.set_cart(newList)
+  }
   },[])
 
   const clickSubmit = () => {
@@ -24,7 +29,10 @@ const CartPage = () => {
   };
 
   const cart = states.cart && states.cart.map((item) => {
-    return <p>{item.name}</p>
+    return <div>
+      <p>{item.name}</p>
+      <button>Remover</button>
+    </div>
   })
 
   return (
