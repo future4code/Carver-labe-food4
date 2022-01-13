@@ -12,7 +12,7 @@ export const GlobalState = (props) => {
     const [profile, set_profile] = useState([])
     const [restaurants, set_restaurants] = useState([])
     const [restaurantsDetails, set_restaurantsDetails] = useState([])
-
+    const [cart, set_cart] = useState([])
     const [activeOrders, set_activeOrders] = useState([])
     const [historyOrders, set_historyOrders] = useState([])
 
@@ -21,11 +21,17 @@ export const GlobalState = (props) => {
         
     },[])
 
-    const states = { data, fullAdress, profile, restaurants, restaurantsDetails, activeOrders, historyOrders }
-    const setters = { set_data, set_fullAdress, set_profile, set_restaurants, set_restaurantsDetails, set_activeOrders, set_historyOrders }
+    const addToCart = (item) => {
+        const addCart = [...cart, item];
+        set_cart(addCart);
+        console.log(addCart);
+        restaurantsDetails.splice(1);}
+
+    const states = { data, fullAdress, profile, restaurants, restaurantsDetails, activeOrders, historyOrders, cart }
+    const setters = { set_data, set_fullAdress, set_profile, set_restaurants, set_restaurantsDetails, set_activeOrders, set_historyOrders, set_cart }
 
     return(
-        <GlobalStateConstext.Provider value={{states, setters}}>
+        <GlobalStateConstext.Provider value={{states, setters, addToCart}}>
             {props.children}
         </GlobalStateConstext.Provider>
     )
