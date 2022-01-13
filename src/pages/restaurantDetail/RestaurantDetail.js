@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react"
+import { useContext } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { getRestaurantDetails, getRestaurants } from "../../api/API_Requests"
+import GlobalStateConstext from "../../global/GlobalStateContext"
 import { StyledDetails, StyledDetailsCard, StyledProducts, StyledProductsCard, StyledFoodArea } from "./StyledRestaurantDetail"
 
 const RestaurantDetail = () => {
     const [restaurantDetails, set_restaurantDetails] = useState([])
+    const { addToCart } = useContext(GlobalStateConstext);
 
-    const styleButtonText = false
+    const styleButtonText = true
     const numterButton = 3
 
     const history = useHistory()
@@ -67,7 +70,7 @@ const RestaurantDetail = () => {
                                 {
                             styleButtonText 
                                 ? 
-                            <button className="card-button-add"> adicionar </button> 
+                            <button className="card-button-add" onClick={() => {addToCart(i)}}> adicionar </button> 
                                 : 
                             <button className="card-button-remove"> remover </button>
                                 }
