@@ -1,5 +1,7 @@
 import React from "react"
 import axios from "axios"
+import { FormContainer } from "./StyledLogin"
+import logo from "../../assets/logo.png"
 import { useForm } from "../../hooks/useForm"
 import { useHistory } from "react-router-dom"
 import { goToHome, goToSignup } from "../../routes/Coordinator"
@@ -35,8 +37,9 @@ const LoginPage = () => {
     }
 
     return (
-        <div>
-            <h1>Login</h1>
+        <FormContainer>
+            <img src={logo} />
+            <p> Fazer Login </p>
             <form onSubmit={onSubmitLogin} >
                     <input
                         type= 'email'
@@ -63,7 +66,7 @@ const LoginPage = () => {
                 </form>
 
                 <button onClick={() => goToSignup(history)}> Não tem conta? cadastre-se </button>
-        </div>
+        </FormContainer>
     )
 }
 export default LoginPage
