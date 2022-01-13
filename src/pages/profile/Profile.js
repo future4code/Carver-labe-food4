@@ -5,10 +5,9 @@ import { StyledContainer, StyledHistoryArea } from "./StyledProfile"
 
 const Profile = () => {
     const { states, setters } = useContext(GlobalStateConstext)
-    const [profile, set_profile] = useState([])
 
     useEffect(() => {
-        getProfile(set_profile)
+        getProfile(setters.set_profile)
     },[])
     return (
         <div>
@@ -16,7 +15,7 @@ const Profile = () => {
             Meu Perfil
             </StyledContainer>
 
-            {profile && profile.map((item) => {
+            {states.profile && states.profile.map((item) => {
                 return <StyledContainer key={item.user.id}>
                     <div className="area-top">
                         <div className="area-top-perfil">
