@@ -3,6 +3,7 @@ import {InputsContainer} from './StyledEditAddress'
 import { useForm } from "../../hooks/useForm"
 import { ApiAddAdress } from "../../api/API_Account"
 import { useHistory } from "react-router-dom"
+import { FormContainer } from "./StyledEditAddress"
 
 const EditAddress = () => {
     const history = useHistory()
@@ -18,11 +19,10 @@ const EditAddress = () => {
 
 
     return (
-        <div>
-            <h1> Cadastre ou Atualize seu Endereço</h1>
+        <FormContainer>
+            <p> Meu Endereço </p>
             
             <form onSubmit = {onSubmitAddress}>
-                <InputsContainer>
                     <input
                         required 
                         value={form.street} 
@@ -83,11 +83,10 @@ const EditAddress = () => {
                     >
                     Salvar
                     </button>
-                </InputsContainer>
             </form>
             
            
-        </div>
+        </FormContainer>
     )
 }
 export default EditAddress

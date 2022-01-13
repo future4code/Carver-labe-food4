@@ -1,9 +1,9 @@
 import React from "react"
 import {useForm} from '../../hooks/useForm'
 import axios from "axios"
-import {InputsContainer} from './StyledEditProfile'
 import { goToHome } from "../../routes/Coordinator"
 import { useHistory } from "react-router-dom"
+import { FormContainer } from "./StyledEditProfile"
 
 const EditProfile = () => {
     const history = useHistory()
@@ -37,10 +37,9 @@ const EditProfile = () => {
     }
 
     return (
-        <div>
-            <h1>Atualize seu Cadastro</h1>
+        <FormContainer>
+            <p> Editar Perfil </p>
             <form onSubmit={onSubmitForm} >
-                <InputsContainer>
                 <input
                     required 
                     value={form.name} 
@@ -75,9 +74,8 @@ const EditProfile = () => {
                 >
                 Salvar
                 </button>
-                </InputsContainer>
             </form>
-        </div>
+        </FormContainer>
     )
 }
 export default EditProfile

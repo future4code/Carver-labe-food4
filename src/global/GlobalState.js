@@ -6,6 +6,8 @@ import { getRestaurants, getRestaurantDetails } from "../api/API_Requests";
 export const GlobalState = (props) => {
     const [data, set_data] = useState([])
 
+    const [url, set_url] = useState("")
+
     const [fullAdress, set_fullAdress] = useState([])
     const [profile, set_profile] = useState([])
     const [restaurants, set_restaurants] = useState([])
@@ -16,6 +18,7 @@ export const GlobalState = (props) => {
 
     useEffect (() => {
         getRestaurants(set_restaurants)
+        
     },[])
 
     const states = { data, fullAdress, profile, restaurants, restaurantsDetails, activeOrders, historyOrders }

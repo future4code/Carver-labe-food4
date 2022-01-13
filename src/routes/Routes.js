@@ -11,10 +11,13 @@ import RestaurantDetail from "../pages/restaurantDetail/RestaurantDetail"
 import React from "react"
 import CompAndaAnda from "../components/localizador"
 
+import { CompHeader } from "../components/CompHeader/CompHeader"
+
 const Router = () => {
     return (
         <BrowserRouter>
             <CompAndaAnda />
+            <CompHeader />
             <Switch>
                 <Route exact path = {'/login'}>
                     <LoginPage/>
