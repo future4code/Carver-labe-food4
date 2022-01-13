@@ -12,6 +12,9 @@ const StyledHeader = styled.div`
     margin: auto;
     border-bottom: 1px solid var(--segundary);
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background-color: white;
     p{
         /* padding-right: 150px; */
         margin: 17px auto;
