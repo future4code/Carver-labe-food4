@@ -12,12 +12,15 @@ import React from "react"
 import CompAndaAnda from "../components/localizador"
 
 import { CompHeader } from "../components/CompHeader/CompHeader"
+import { CompFooter } from "../components/CompFooter/CompFooter"
+import { StyledPages } from "./StyledGlobalPages"
 
 const Router = () => {
     return (
         <BrowserRouter>
-            <CompAndaAnda />
             <CompHeader />
+            <StyledPages>
+            <CompAndaAnda />
             <Switch>
                 <Route exact path = {'/login'}>
                     <LoginPage/>
@@ -55,6 +58,8 @@ const Router = () => {
                     <Error/>
                 </Route>
             </Switch>
+            </StyledPages>
+            <CompFooter />
         </BrowserRouter>
     )
 }
