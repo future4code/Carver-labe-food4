@@ -60,7 +60,7 @@ export const CompHeader = () => {
                 <button> <ion-icon name="chevron-back-outline"/> </button>
             }
             
-            <p>PAGINA</p>
+            <p>LABEFOOD</p>
         </StyledHeader>
     )
 }

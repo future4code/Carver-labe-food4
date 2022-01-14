@@ -12,7 +12,7 @@ export const getRestaurants = (set_data) => {
             set_data(resp.data)
         })
         .catch((error) => {
-            window.alert("getRestaurants erro")
+            window.alert('Entre ou cadastre-se, por favor!')
         })
 }
 

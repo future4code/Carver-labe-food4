@@ -4,9 +4,11 @@ import GlobalStateConstext from "../../global/GlobalStateContext"
 import { StyledHome } from "./StyledHome"
 import { goToDetail } from "../../routes/Coordinator"
 import Filter from "../../components/Filter"
+import useProtectedPage from "../../hooks/useProtectedPage"
 
 
 const HomePage = () => {
+    useProtectedPage()
     const { states, setters } = useContext(GlobalStateConstext)
     const [restaurants, set_restaurants] = useState([])
     const [name, setName] = useState('')

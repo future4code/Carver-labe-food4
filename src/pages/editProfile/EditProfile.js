@@ -4,8 +4,10 @@ import axios from "axios"
 import { goToHome } from "../../routes/Coordinator"
 import { useHistory } from "react-router-dom"
 import { FormContainer } from "./StyledEditProfile"
+import useProtectedPage from "../../hooks/useProtectedPage"
 
 const EditProfile = () => {
+    useProtectedPage()
     const history = useHistory()
     const {form, onChange, clearInputs} = useForm({name:'', email: '', cpf: ''})
 

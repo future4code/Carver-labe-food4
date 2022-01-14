@@ -3,9 +3,11 @@ import { useContext } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { getRestaurantDetails, getRestaurants } from "../../api/API_Requests"
 import GlobalStateConstext from "../../global/GlobalStateContext"
+import useProtectedPage from "../../hooks/useProtectedPage"
 import { StyledDetails, StyledDetailsCard, StyledProducts, StyledProductsCard, StyledFoodArea } from "./StyledRestaurantDetail"
 
 const RestaurantDetail = () => {
+    useProtectedPage()
     const [restaurantDetails, set_restaurantDetails] = useState([])
     const { addToCart } = useContext(GlobalStateConstext);
 
