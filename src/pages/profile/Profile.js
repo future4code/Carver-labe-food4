@@ -4,8 +4,10 @@ import GlobalStateConstext from "../../global/GlobalStateContext"
 import { StyledContainer, StyledHistoryArea } from "./StyledProfile"
 import { goToEditAddress, goToEditProfile } from "../../routes/Coordinator"
 import { useHistory } from "react-router-dom"
+import useProtectedPage from "../../hooks/useProtectedPage"
 
 const Profile = () => {
+    useProtectedPage()
     const history = useHistory()
     const { states, setters } = useContext(GlobalStateConstext)
 

@@ -4,8 +4,10 @@ import { useForm } from "../../hooks/useForm"
 import { ApiAddAdress } from "../../api/API_Account"
 import { useHistory } from "react-router-dom"
 import { FormContainer } from "./StyledEditAddress"
+import useProtectedPage from "../../hooks/useProtectedPage"
 
 const EditAddress = () => {
+    useProtectedPage()
     const history = useHistory()
 
     const {form, onChange, clearInputs} = useForm({street:'', number: '', complement: '', neighbourhood:'', city: '', state: ''})

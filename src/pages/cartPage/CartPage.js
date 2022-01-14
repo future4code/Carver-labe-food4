@@ -5,8 +5,10 @@ import GlobalStateConstext from '../../global/GlobalStateContext';
 import { goToHome } from '../../routes/Coordinator';
 import { getProfile, getRestaurantDetails } from '../../api/API_Requests'
 import { StyledProductsCard, StyledCart } from './StyledCartPage';
+import useProtectedPage from '../../hooks/useProtectedPage';
 
 const CartPage = () => {
+  useProtectedPage()
   const history = useHistory();
   const params = useParams()
   const {states, setters, addToCart} = useContext(GlobalStateConstext)
