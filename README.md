@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+﻿# Projeto Final do Frontend: LabeFoods - Grupo 4
 
-## Available Scripts
+Componentes do grupo:
 
-In the project directory, you can run:
+Alisson Abílio
+Ícaro Ferreira do Amaral
+Luis Gustavo Rodrigues de Paula
+Thiago Daurizio Feitosa Pereira
+Victor Ferreira do Vale
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Descrição geral sobre o projeto
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+O grupo tinha como objetivo a criação de um aplicativo para o pedido de comidas chamado Rappi4.
+Para isso deveriamos utilizar todo o conhecimento adquirido ao longo dos três meses destinados ao estudo do frontend e tentar entregar o melhor trabalho possível seguindo as orientações apresentadas ao grupo.
 
-### `npm test`
+## Descrição sobre o desenvolvimento do projeto
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O grupo se viu desafiado perante o desafio, mas ainda assim estamos satisfeitos com o resultado, apesar de compreendermos e aceitarmos que ainda temos um longo caminho a trilhar para aprofundar nossos conhecimentos e evoluir nossas entregas futuras.
 
-### `npm run build`
+**O que funciona e o que não funciona:**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* A página inicial se encontra plenamente funcional. O usuário tem a opção de criar um novo login a partir do zero, ou utilizar um pre-existente. Nesse caso recomenda-se utilizar os seguintes dados:
+Usuário: [teste@email.com](mailto:teste@email.com)  
+Senha: 123456
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* A página destinada ao cadastro dos dados do usuário se encontra plenamente funcional.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* A página destinado ao cadastro do endereço do usuário se encontra plenamente funcional.
+* A página home, à qual o usuário é encaminhado após concluir o login ou cadastro se encontra plenamente funcional. (É recomendado dar um refresh no browser ao acessar a página home, a API costuma ser um pouco lenta)
+* A página de detalhes dos restaurantes se encontra parcialmente funcional, infelizmente não conseguimos implementar o botão de detalhes sobre os restaurantes.
+* O carrinho se encontra parcialmente funcional, apesar dele aceitar itens, o usuário é incapaz de remover itens do mesmo, ou concluir o pedido e seguir adiante com o pagamento.
+* A página de perfil infelizmente não funciona no momento.
 
-### `npm run eject`
+## Link Surge
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[https://carver-rappi4b.surge.sh](https://carver-rappi4b.surge.sh/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Imagens
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Pagina Inicial
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Pagina Inicial](https://i.imgur.com/BjfK1Zt.jpg)
 
-## Learn More
+Pagina de cadastro de dados
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Pagina de cadastro de dados](https://i.imgur.com/XTcyOZM.jpg)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Pagina de cadastro de endereço
 
-### Code Splitting
+![endereco](https://i.imgur.com/vtZtP1x.jpg)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Home
 
-### Analyzing the Bundle Size
+![Home](https://i.imgur.com/aU4jv7I.jpg)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Página do restaurante
 
-### Making a Progressive Web App
+![restaurante](https://i.imgur.com/AgCh3Cq.jpg)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Carrinho
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Carrinho](https://i.imgur.com/7HzPIGM.jpg)
