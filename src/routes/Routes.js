@@ -9,7 +9,6 @@ import EditAddress from "../pages/editAddress/EditAddress"
 import EditProfile from "../pages/editProfile/EditProfile"
 import RestaurantDetail from "../pages/restaurantDetail/RestaurantDetail"
 import React from "react"
-import CompAndaAnda from "../components/localizador"
 
 import { CompHeader } from "../components/CompHeader/CompHeader"
 import { CompFooter } from "../components/CompFooter/CompFooter"
@@ -20,7 +19,6 @@ const Router = () => {
         <BrowserRouter>
             <CompHeader />
             <StyledPages>
-            <CompAndaAnda />
             <Switch>
                 <Route exact path = {'/login'}>
                     <LoginPage/>

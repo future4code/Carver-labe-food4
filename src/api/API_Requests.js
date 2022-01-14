@@ -45,12 +45,12 @@ export const getProfile = (set_data) => {
 
     axios.get(url, header)
         .then((resp) => {
-            console.log("getRestaurantDetails", resp.data)
-            array.push(resp.data)
+            console.log("getProfile", resp.data.user)
+            array.push(resp.data.user)
             set_data(array)
         })
         .catch((error) => {
-            window.alert("getRestaurantDetails erro")
+            window.alert("getProfile erro")
         })
 }
 

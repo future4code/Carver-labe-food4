@@ -17,6 +17,15 @@ export const StyledContainer = styled.div`
             width: 30px;
             height: 30px;
             margin-top: 10px;
+            display: flex;
+            align-items: center;
+            place-items: center;
+            color: black;
+            font-size: 2em;
+            padding: 0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
         }
 
         p{
@@ -39,6 +48,15 @@ export const StyledContainer = styled.div`
             width: 30px;
             height: 30px;
             margin-top: 10px;
+            display: flex;
+            align-items: center;
+            place-items: center;
+            color: black;
+            font-size: 2em;
+            padding: 0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
         }
 
         p{

@@ -2,8 +2,11 @@ import React, { useContext, useEffect, useState } from "react"
 import { getProfile } from "../../api/API_Requests"
 import GlobalStateConstext from "../../global/GlobalStateContext"
 import { StyledContainer, StyledHistoryArea } from "./StyledProfile"
+import { goToEditAddress, goToEditProfile } from "../../routes/Coordinator"
+import { useHistory } from "react-router-dom"
 
 const Profile = () => {
+    const history = useHistory()
     const { states, setters } = useContext(GlobalStateConstext)
 
     useEffect(() => {
@@ -24,7 +27,7 @@ const Profile = () => {
                             <p>{item.user.cpf}</p>
                         </div>
                         <div className="area-top-edit">
-                            <button> E </button>
+                            <button onClick={() => goToEditProfile(history)}> <ion-icon name="pencil-outline" /> </button>
                         </div>
                     </div>
 
@@ -35,7 +38,7 @@ const Profile = () => {
                         </div>
 
                         <div className="area-bottom-edit">
-                            <button> E </button>
+                            <button onClick={() => goToEditAddress(history)}> <ion-icon name="pencil-outline" /> </button>
                         </div>
                     </div>
                 </StyledContainer>

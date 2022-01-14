@@ -10,9 +10,9 @@ export default function CompAndaAnda() {
         <div>
             {/* <button onClick={()=> goToHome(history)}> HOME </button> */}
             <button onClick={()=> goToLogin(history)}> Login </button>
-            <button onClick={()=> goToEditAddress(history)}> Endereço </button>
+            {/* <button onClick={()=> goToEditAddress(history)}> Endereço </button> */}
             {/* <button onClick={()=> goToCart(history)}> Carrinho </button> */}
-            <button onClick={()=> goToEditProfile(history)}> Editar Perfil </button>
+            {/* <button onClick={()=> goToEditProfile(history)}> Editar Perfil </button> */}
             {/* <button onClick={()=> goToProfile(history)}> Ver Perfil </button> */}
             {/* <button onClick={()=> goToDetail(history)}> Restaurante Detalhes </button> */}
         </div>

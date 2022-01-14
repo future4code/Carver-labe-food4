@@ -21,6 +21,16 @@ const StyledHeader = styled.div`
     }
     button{
         margin-left: 15px;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        place-items: center;
+        color: black;
+        font-size: 2em;
+        padding: 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
     }
 `
 
@@ -47,7 +57,7 @@ export const CompHeader = () => {
                     ?
                 <></>
                     :
-                <button onClick={() => history.goBack}> C </button>
+                <button> <ion-icon name="chevron-back-outline"/> </button>
             }
             
             <p>PAGINA</p>

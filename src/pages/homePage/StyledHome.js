@@ -26,13 +26,37 @@ img{
     border: solid 1px #b8b8b8;
     margin: 10px;
     cursor: pointer;
+    color: gray;
+    
+    .card-content{
+        display: flex;
+        margin: auto;
+        margin-left: 16px;
+        justify-content: space-between;
+    }
 
-.card-bottom{
-    display: flex;
-    justify-content: space-between;
-    align-items: space-between;
-    margin: 0 10px;
+    .card-title{
+        color: var(--primary);
+        font-size: 16px;
+    }
 
-}
+    .card-upper{
+        height: 68px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p{
+            margin-bottom: 15px;
+
+        }
+    }
+
+    .card-bottom{
+        display: flex;
+        margin-top: 35px;
+        margin-right: 10px;
+
+    }
 }
 `

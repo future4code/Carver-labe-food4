@@ -1,17 +1,28 @@
-import React, { useEffect } from 'react';
-import { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState, useContext } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import { ApiLogin } from '../../api/API_Account';
 import GlobalStateConstext from '../../global/GlobalStateContext';
 import { goToHome } from '../../routes/Coordinator';
+import { getProfile, getRestaurantDetails } from '../../api/API_Requests'
+import { StyledProductsCard, StyledCart } from './StyledCartPage';
 
 const CartPage = () => {
   const history = useHistory();
+  const params = useParams()
   const {states, setters, addToCart} = useContext(GlobalStateConstext)
   const cartStorage = localStorage.getItem('carrinho')
   const newList = JSON.parse(cartStorage)
 
+  const [profile, set_profile] = useState()
+  const [restaurantDetails, set_restaurantDetails] = useState()
+
+
+
+
   useEffect(() => {
+    getProfile(set_profile)
+    getRestaurantDetails(2, set_restaurantDetails)
+
   if(!localStorage.getItem('carrinho')){
     return addToCart()
   }else{
@@ -23,31 +34,70 @@ const CartPage = () => {
     goToHome(history);
   };
 
-  const login = () => {
-    const body = { email: 'teste@email.com', password: '123456' };
-    ApiLogin(body);
-  };
+
 
   const cart = states.cart && states.cart.map((item) => {
-    return <div>
-      <p>{item.name}</p>
-      <button>Remover</button>
-    </div>
+    return (<StyledProductsCard>
+      <img src={item.photoUrl} alt={item.name} />
+
+      <div className="card-content"> 
+        <div className="card-content-top">
+          <div className="card-content-texts">
+            <p>{item.name}</p>
+            <p>{item.description}</p>
+          </div>
+      
+          <div className="card-content-marker">
+            <button>1</button>
+          </div>
+        </div>
+
+
+      <div className="card-content-bottom">
+        <div>
+          <p>R${item.price.toFixed(2)}</p>
+        </div>
+        
+        <div className="card-content-cart">
+          <button className="card-button-remove"> remover </button>
+        </div>
+      </div>
+      </div>
+    </StyledProductsCard>)
+      
+
+
+  })
+
+  const restaurant = restaurantDetails && restaurantDetails.map((local) => {
+    return(
+      <div>
+        <p>{local.name}</p>
+        <p>{local.address}</p>
+        <p>{local.deliveryTime}min - {local.deliveryTime + 10}min</p>
+      </div>
+    )
+  })
+
+  const adress = profile && profile.map((item) => {
+    return(
+      <div>
+        {item.address}
+      </div>
+    )
   })
 
   return (
-    <div>
-      <h1>Carrinho</h1>
-
+    <StyledCart>
       <div>Endereço de entrega</div>
+      {adress}
 
       <div>
-        <p>Restaurante</p>
-        Endereço do restaurante em um tom mais claro
+        {restaurant}
       </div>
 
       <div>
-      {cart}
+        {cart}
       </div>
 
       <p>subtotal</p>
@@ -72,9 +122,7 @@ const CartPage = () => {
         <label>Dinheiro</label>
         <button>Pagar</button>
       </form>
-
-      <button onClick={login}>Login</button>
-    </div>
+    </StyledCart>
   );
 };
 export default CartPage;

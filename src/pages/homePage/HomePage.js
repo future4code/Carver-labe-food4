@@ -36,9 +36,12 @@ const HomePage = () => {
             <img src={local.logoUrl} />
         
             <div className="card-content">
-                <p className="card-upper">{local.name}</p>
-                <div className="card-bottom">
+                <div className="card-upper">
+                    <p className="card-title">{local.name}</p>
                     <p>{local.deliveryTime}min</p> 
+                </div>
+    
+                <div className="card-bottom">
                     <p>Frete: R$ {local.shipping.toFixed(2)}</p>
                 </div>
             </div>
@@ -48,7 +51,6 @@ const HomePage = () => {
 
     return (
         <StyledHome>
-            HomePage
             <Filter name={name} handleName={handleName} />
             {filteredList}
         </StyledHome>
